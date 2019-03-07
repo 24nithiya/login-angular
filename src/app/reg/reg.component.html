@@ -1,0 +1,26 @@
+<div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+  <h1> REGISTER</h1></div>
+  <div class="card-body">
+      <form [formGroup]="registerform"(ngSubmit)="onSubmit()">
+         <label>FirstName</label>
+      <input  type="text" formControlName="firstName" class="form-control rounded-0"  required>
+       <div *ngIf= "firstName.invalid && (firstName.dirty || firstName.touched)">
+          <div *ngIf= "firstName.errors.required " class="form-error">name is required</div>
+          <div *ngIf= "firstName.errors.minlength " class="form-error">must be at least 4</div>
+      </div>
+
+      <label>UserName</label>
+      <input  [(ngModel)]="registerdata.username" type="text" formControlName="username" class="form-control rounded-0" required>
+   <div *ngIf= "username.invalid && (username.dirty || username.touched)">
+          <div *ngIf= "username.errors.required " class="form-error">name is required</div>
+          <div *ngIf= "username.errors.minlength " class="form-error">must be at least 8</div>
+   </div>
+   <button (click)="registerUser()" type="button" class="btn btn-primary float-right">Register</button>
+      </form>
+</div>
+</div>
+</div>
+</div>

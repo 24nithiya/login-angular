@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>
+  My Contacts
+  </h2>
+  <table  style="width:100%" class="table table-bordered table-hover">
+  <tr class="table-success">
+   
+      <th>Userame</th>
+      <th>Password</th>
+      
+  </tr>
+  <tr *ngFor="let contact of contacts">
+      
+      <td> {{ contact.username }} </td>
+      <td> {{ contact.password }} </td>
+     
+  
+ <td><button type="button" (click)="booktodelete(contact.id)">DELETE</button></td>
+ 
+  </tr>
+  </table>
+
+</div>
+
